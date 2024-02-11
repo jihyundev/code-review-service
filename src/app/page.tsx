@@ -1,8 +1,11 @@
+import CodeEditor from "@/components/CodeEditor";
 
 export default function Home() {
   return (
   <main>
-    this is main page. you can submit code here.
+    <div>
+      <CodeEditor />
+    </div>
   </main>
   );
 }
