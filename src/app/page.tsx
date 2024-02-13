@@ -1,10 +1,10 @@
-import CodeEditor from "@/components/CodeEditor";
+import CodeSubmit from "@/components/CodeSubmit";
 
 export default function Home() {
   return (
   <main>
     <div>
-      <CodeEditor />
+      <CodeSubmit />
     </div>
   </main>
   );

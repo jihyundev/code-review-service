@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Header() {
 
     const NAV_MENUS = [
-        { title: "submit code", href: "/" },
+        { title: "home", href: "/" },
         { title: 'archives', href: '/archives' },
     ]
 

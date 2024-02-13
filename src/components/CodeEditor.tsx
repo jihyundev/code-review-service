@@ -16,10 +16,10 @@ const LANGUAGES = [
 ];
 
 type CodeEditorProps = {
-    onSubmitCode?: (value: any) => void;
+    onSubmitCode: (value: any) => void;
 };
 
-export default function CodeEditor({ onSubmitCode = () => {} }: CodeEditorProps) {
+export default function CodeEditor({ onSubmitCode }: CodeEditorProps) {
     const editorRef = useRef(null);
     const [language, setLanguage] = useState<string>();
 
@@ -33,7 +33,6 @@ export default function CodeEditor({ onSubmitCode = () => {} }: CodeEditorProps)
 
     const onSubmit = () => {
         const value = editorRef.current.getValue();
-        console.log(value)
         onSubmitCode(value)
     }
 
@@ -50,7 +49,12 @@ export default function CodeEditor({ onSubmitCode = () => {} }: CodeEditorProps)
                 theme="vs-dark"
                 loading={<Loading />}
             />
-            <button onClick={onSubmit}>Submit Code</button>
+            <button
+                onClick={onSubmit}
+                className={"h-10 my-4 p-1 outline"}
+            >
+                Submit Code
+            </button>
         </>
     )
 }
