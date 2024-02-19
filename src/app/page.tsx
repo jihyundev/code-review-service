@@ -1,11 +1,11 @@
-import CodeSubmit from "@/components/CodeSubmit";
+import CodeSubmit from '@/components/CodeSubmit'
 
 export default function Home() {
   return (
-  <main>
-    <div>
-      <CodeSubmit />
-    </div>
-  </main>
-  );
+    <main>
+      <div>
+        <CodeSubmit />
+      </div>
+    </main>
+  )
 }
