@@ -1,10 +1,23 @@
 import Link from 'next/link'
+import { createClient } from '@/utils/supabase/server'
+import AuthButton from '@/components/AuthButton'
 
 export default function Header() {
   const NAV_MENUS = [
     { title: 'home', href: '/' },
     { title: 'archives', href: '/archives' },
   ]
+
+  const canInitSupabaseClient = () => {
+    try {
+      createClient()
+      return true
+    } catch (e) {
+      return false
+    }
+  }
+
+  const isSupabaseConnected = canInitSupabaseClient()
 
   return (
     <header className="flex justify-between align-middle p-8 mb-3 mx-auto w-full sm:px-6 md:max-w-3xl xl:max-w-5xl">
@@ -19,11 +32,7 @@ export default function Header() {
         ))}
       </nav>
       <div className="lg:flex lg:flex-1 lg:justify-end">
-        <Link
-          href={'/login'}
-          className="font-medium text-gray-900 dark:text-gray-100">
-          login
-        </Link>
+        {isSupabaseConnected && <AuthButton />}
       </div>
     </header>
   )
